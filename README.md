@@ -1,4 +1,4 @@
-A Docker image for building [Bevy](bevyengine.org) games for the SteamDeck.
+A Docker image for building [Bevy](bevyengine.org) games for the SteamOS (SteamDeck).
 
 Building apps for Linux from your development PC and sharing with another PC can be inconsistent because Linux uses shared libraries and your PC may have linked newer libraries that are incompatible with the target PC's older libraries. This is especially true with the SteamDeck as it may not have the newest versions (e.g. glibc) and cannot be easily updated until Steam releases their official update.
 
@@ -10,18 +10,18 @@ This Docker image simply uses Valve's Docker image and adds Rust and the librari
 
 Build the docker image
 ```
-docker build -t bevy_steamdeck https://raw.githubusercontent.com/paul-hansen/bevy_steamdeck_docker/main/Dockerfile
+docker build -t bevy_steamos https://raw.githubusercontent.com/paul-hansen/bevy_steamos_docker/main/Dockerfile
 ```
 
 From your project directory, run:
 
 ```
-docker run -v .:/usr/src/project bevy_steamdeck
+docker run -v .:/usr/src/project bevy_steamos
 ```
 
 By default the container will run `cargo build --release` on your project directory. You can find the resulting binary file in the `./target/release` directory
 
 If you want to build a debug build, simply override the default command like this:
 ```
-docker run -v .:/user/src/project bevy_steamdeck cargo build
+docker run -v .:/user/src/project bevy_steamos cargo build
 ```
