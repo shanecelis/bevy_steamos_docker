@@ -3,7 +3,7 @@ FROM registry.gitlab.steamos.cloud/steamrt/sniper/sdk:latest
 ENV RUSTUP_HOME=/usr/local/rustup \
     CARGO_HOME=/usr/local/cargo \
     PATH=/usr/local/cargo/bin:$PATH \
-    RUST_VERSION=1.79.0
+    RUST_VERSION=1.82.0
 
 RUN export DEBIAN_FRONTEND=noninteractive \
     && apt-get update -y \
